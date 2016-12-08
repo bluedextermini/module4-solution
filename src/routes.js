@@ -30,24 +30,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'ItemsController as items',
     resolve:{
         itemList: ['MenuDataService','$stateParams', function(MenuDataService, $stateParams){
+          console.log("route::category:"+$stateParams.category);
         return MenuDataService.getItemsForCategory($stateParams.category);
       }]
     }
   });
-
-
-
-  // .state('categories',{
-  //   url:'/categories',
-  //   templateUrl:'src/template/categories.template.html',
-  //   controller: 'categoriesController as categories',
-
-    // resolve:{
-    //   categoryList: ['MenuDataService', function(MenuDataService){
-    //     return MenuDataService.getAllCategories();
-    //   }]
-    // }
-  // });
 
 }
 

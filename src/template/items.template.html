@@ -1,9 +1,4 @@
-<!-- <div>
-  <h2>Item List in category {{}}</h2>
-  <ul>
-  <li ng-repeat='category in $ctrl.categoryList'><a ui-sref='items({category:{{category.short_name}}})'> {{category.name}} </a></li>
-  </ul>
-
-</div> -->
-
-<h2>Item List in category</h2>
+<div>
+    Back to <a href="#" ui-sref='categories'> categories</a> 
+   <items category='items.category' item-list='items.itemList' ></items>
+</div>

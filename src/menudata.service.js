@@ -30,7 +30,7 @@
         }).then(function(result){
             console.log('result::getItemsForCategory::',result);
             console.log('service::categoryList',result);
-            deferred.resolve(result.data);
+            deferred.resolve(result.data.menu_items);
 
         });
          return deferred.promise;
