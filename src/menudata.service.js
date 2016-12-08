@@ -22,14 +22,15 @@
         return deferred.promise;
       }
 
-      service.getItemsForCategory=function (categoryShortName) {
+      service.getItemsForCategory=function (category) {
         var deferred = $q.defer();
         $http({
           method: 'GET',
-          url: 'https://davids-restaurant.herokuapp.com/menu_items.json?category='+categoryShortName
-        }).then(function(items){
-            console.log('getItemsForCategory::',items);
-            deferred.resolve(items);
+          url: 'https://davids-restaurant.herokuapp.com/menu_items.json?category='+category
+        }).then(function(result){
+            console.log('result::getItemsForCategory::',result);
+            console.log('service::categoryList',result);
+            deferred.resolve(result.data);
 
         });
          return deferred.promise;
